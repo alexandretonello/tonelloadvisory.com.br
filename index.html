@@ -836,8 +836,8 @@
     <div class="contact-grid">
       <div class="contact-item reveal">
         <div class="k">E-mail</div>
-        <a class="v" href="/cdn-cgi/l/email-protection#02636e677a636c66706742766d6c676e6e6d6366746b716d707b2c616d6f2c6070" id="email-link">
-          <span class="__cf_email__" data-cfemail="ddbcb1b8a5bcb3b9afb89da9b2b3b8b1b1b2bcb9abb4aeb2afa4f3beb2b0f3bfaf">[email&#160;protected]</span>
+        <a class="v" href="#" id="email-link" data-u="alexandre" data-d="tonelloadvisory.com.br">
+          <span id="email-text"></span>
           <span class="copy-pill" id="copy-email" role="button" tabindex="0" aria-label="Copiar e-mail">Copiar</span>
         </a>
       </div>
@@ -846,14 +846,6 @@
         <a class="v" href="https://linkedin.com/in/alexandretonello" target="_blank" rel="noopener noreferrer">
           /in/alexandretonello
         </a>
-      </div>
-      <div class="contact-item reveal" style="--d:160ms">
-        <div class="k">Localização</div>
-        <div class="v">Florianópolis, SC · Brasil</div>
-      </div>
-      <div class="contact-item reveal" style="--d:240ms">
-        <div class="k">Atendimento</div>
-        <div class="v">Seg — Sex · resposta em 48h</div>
       </div>
     </div>
 
@@ -867,7 +859,7 @@
 <!-- Tweaks panel mount -->
 <div id="tweaks-root"></div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Nav background on scroll
   (() => {
     const nav = document.getElementById('nav');
@@ -906,10 +898,20 @@
     els.forEach(el => { if (!el.classList.contains('in')) io.observe(el); });
   })();
 
-  // Copy email
+  // Email — assembled at runtime to bypass Cloudflare email-address obfuscation
   (() => {
+    const link = document.getElementById('email-link');
+    if (!link) return;
+    const u = link.dataset.u;
+    const d = link.dataset.d;
+    const at = String.fromCharCode(64);
+    const email = u + at + d;
+    link.setAttribute('href', 'mail' + 'to:' + email);
+    const textEl = document.getElementById('email-text');
+    if (textEl) textEl.textContent = email;
+
     const btn = document.getElementById('copy-email');
-    const email = 'alexandre@tonelloadvisory.com.br';
+    if (!btn) return;
     const copy = async (e) => {
       e.preventDefault();
       e.stopPropagation();
@@ -919,9 +921,11 @@
         btn.classList.add('copied');
         setTimeout(() => { btn.textContent = 'Copiar'; btn.classList.remove('copied'); }, 1800);
       } catch (_) {
-        // fallback: select
-        const r = document.createRange(); r.selectNodeContents(document.getElementById('email-link'));
-        const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        const r = document.createRange();
+        r.selectNodeContents(link);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(r);
       }
     };
     btn.addEventListener('click', copy);
