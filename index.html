@@ -751,6 +751,7 @@
     line-height: 1.45;
     opacity: .82;
   }
+  .svc-q + .svc-fields{ margin-top: 20px; }
   .svc-d{
     font-family: var(--sans);
     font-size: clamp(14.5px, 1.05vw, 16px);
@@ -765,6 +766,33 @@
     .svc-num{ font-size: 12.5px; padding-top: 6px; }
     .svc-head{ margin-bottom: 10px; }
     .svc-tag{ font-size: 10.5px; letter-spacing: .16em; }
+  }
+  /* Three labeled fields inside a service card */
+  .svc-fields{
+    margin: 4px 0 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px 40px; max-width: none;
+  }
+  .svc-field{ display: block; }
+  .svc-field dt{
+    font-family: var(--sans);
+    font-size: 11px; font-weight: 600;
+    letter-spacing: .18em; text-transform: uppercase;
+    color: var(--ink);
+    padding-bottom: 9px; margin-bottom: 11px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .svc-field dd{
+    margin: 0;
+    font-family: var(--sans);
+    font-size: clamp(14px, 1vw, 15.5px);
+    line-height: 1.62;
+    color: var(--muted);
+    text-wrap: pretty;
+  }
+  @media (max-width: 820px){
+    .svc-fields{ grid-template-columns: 1fr; gap: 20px; }
+    .svc-field dt{ padding-bottom: 7px; margin-bottom: 8px; }
   }
 
   /* ── PROCESSO · metodologia ────────────────────────── */
@@ -885,11 +913,24 @@
         <div class="svc-num">01</div>
         <div class="svc-body">
           <header class="svc-head">
-            <h3 class="svc-name">Modelagem Financeira</h3>
-            <span class="svc-tag">Desenvolvimento</span>
+            <h3 class="svc-name">Viabilidade Econômico-Financeira</h3>
+            <span class="svc-tag">Pré-desenvolvimento</span>
           </header>
-          <p class="svc-q">&ldquo;Como o projeto se comporta financeiramente?&rdquo;</p>
-          <p class="svc-d">Construção de modelo financeiro completo como produto isolado — Project Finance, DCF ou análise de sensibilidade. O produto é a ferramenta em si: o cliente a usa para decisões internas, apresentação a financiadores ou simulação de cenários. Adaptável a qualquer estágio — greenfield, em construção ou em operação. Entregue com manual de premissas e documentação auditável.</p>
+          <p class="svc-q">&ldquo;O projeto é viável e em que condições?&rdquo;</p>
+          <dl class="svc-fields">
+            <div class="svc-field">
+              <dt>O que é</dt>
+              <dd>Análise estruturada da atratividade financeira do projeto, iniciada por uma triagem rápida (go/no-go) sobre as premissas fornecidas.</dd>
+            </div>
+            <div class="svc-field">
+              <dt>Para que serve</dt>
+              <dd>Entender se o projeto se sustenta financeiramente e sob quais condições, antes de avançar para estruturação ou captação.</dd>
+            </div>
+            <div class="svc-field">
+              <dt>O que você recebe</dt>
+              <dd>Um relatório de viabilidade com LCOE, indicadores de retorno e estrutura de receita, mais um modelo de base.</dd>
+            </div>
+          </dl>
         </div>
       </article>
 
@@ -897,11 +938,24 @@
         <div class="svc-num">02</div>
         <div class="svc-body">
           <header class="svc-head">
-            <h3 class="svc-name">Viabilidade Econômico-Financeira</h3>
-            <span class="svc-tag">Pré-desenvolvimento</span>
+            <h3 class="svc-name">Modelagem Financeira</h3>
+            <span class="svc-tag">Desenvolvimento</span>
           </header>
-          <p class="svc-q">&ldquo;O projeto é viável e em que condições?&rdquo;</p>
-          <p class="svc-d">Análise estruturada da atratividade financeira do projeto a partir das premissas técnicas e regulatórias fornecidas. Cálculo de LCOE, indicadores de retorno e estrutura de receita, com modelo de base que alimenta diretamente etapas subsequentes de estruturação ou captação. Premissas documentadas quanto à origem.</p>
+          <p class="svc-q">&ldquo;Como o projeto se comporta financeiramente em diferentes cenários?&rdquo;</p>
+          <dl class="svc-fields">
+            <div class="svc-field">
+              <dt>O que é</dt>
+              <dd>A construção de um modelo financeiro completo e parametrizável — Project Finance, DCF ou análise de sensibilidade.</dd>
+            </div>
+            <div class="svc-field">
+              <dt>Para que serve</dt>
+              <dd>Apoiar decisões internas, apresentar o projeto a financiadores e simular cenários com autonomia. A ferramenta fica com você.</dd>
+            </div>
+            <div class="svc-field">
+              <dt>O que você recebe</dt>
+              <dd>O modelo em planilha aberta e auditável, adaptado ao estágio do ativo, com manual de premissas documentado.</dd>
+            </div>
+          </dl>
         </div>
       </article>
 
@@ -913,31 +967,20 @@
             <span class="svc-tag">Transação</span>
           </header>
           <p class="svc-q">&ldquo;Quanto vale este ativo — para comprar ou para vender?&rdquo;</p>
-          <p class="svc-d">Estimativa de valor fundamentada em modelagem, sobre ativo de energia em operação ou desenvolvimento. Utiliza fluxo de caixa descontado (DCF) e múltiplos de transações comparáveis. O entregável é um relatório de valor que o cliente usa como referência em negociações. Atuação exclusiva para uma das partes por transação.</p>
-        </div>
-      </article>
-
-      <article class="svc-row reveal" style="--d:180ms">
-        <div class="svc-num">04</div>
-        <div class="svc-body">
-          <header class="svc-head">
-            <h3 class="svc-name">Análise Preliminar (Go/No-Go)</h3>
-            <span class="svc-tag">Triagem</span>
-          </header>
-          <p class="svc-q">&ldquo;Vale a pena avançar nesta oportunidade?&rdquo;</p>
-          <p class="svc-d">Avaliação rápida da atratividade financeira de uma oportunidade, a partir das informações disponíveis. Analisa estrutura de receita, ordem de grandeza de CAPEX e OPEX e indicadores preliminares de retorno — sem modelagem aprofundada. O cliente sai com uma posição quantitativa para decidir se avança ou não.</p>
-        </div>
-      </article>
-
-      <article class="svc-row reveal" style="--d:240ms">
-        <div class="svc-num">05</div>
-        <div class="svc-body">
-          <header class="svc-head">
-            <h3 class="svc-name">Suporte Pontual</h3>
-            <span class="svc-tag">Transversal · mín. 4h</span>
-          </header>
-          <p class="svc-q">&ldquo;Preciso de uma opinião técnica agora.&rdquo;</p>
-          <p class="svc-d">Hora técnica para dúvidas específicas sem compromisso de projeto. Cobre qualquer etapa — da triagem ao fechamento. Indicado para executivos e investidores que precisam de um segundo olhar qualificado antes de uma decisão, reunião ou proposta. Entregue como nota técnica escrita.</p>
+          <dl class="svc-fields">
+            <div class="svc-field">
+              <dt>O que é</dt>
+              <dd>Estimativa de valor por modelagem, sobre ativo em operação ou desenvolvimento, via DCF e múltiplos comparáveis.</dd>
+            </div>
+            <div class="svc-field">
+              <dt>Para que serve</dt>
+              <dd>Sustentar uma posição de preço numa negociação de compra ou venda, com base técnica que se defende sob questionamento.</dd>
+            </div>
+            <div class="svc-field">
+              <dt>O que você recebe</dt>
+              <dd>Um relatório de valor com a faixa fundamentada e o posicionamento ante o preço. Exclusivo por transação.</dd>
+            </div>
+          </dl>
         </div>
       </article>
     </div>
@@ -948,15 +991,28 @@
 <section class="processo" id="processo" aria-labelledby="proc-title">
   <div class="container">
     <p class="eyebrow reveal">03 — Processo</p>
-    <h2 id="proc-title" class="section-title reveal">Como conduzo a avaliação de um ativo.</h2>
-    <p class="lede reveal" style="--d:80ms">Quatro fases encadeadas — do diagnóstico técnico à opinião de valor fundamentada. Cada etapa alimenta a seguinte e fica documentada no entregável.</p>
+    <h2 id="proc-title" class="section-title reveal">Direto, com escopo claro.</h2>
+    <p class="lede reveal" style="--d:80ms">Sem proposta inflada, sem ruído. Do primeiro contato à decisão, você sabe exatamente o que está comprando.</p>
 
       <div class="svc-list" style="margin-top: clamp(40px, 5vw, 64px);">
         <article class="svc-row reveal" style="--d:0ms">
           <div class="svc-num">i.</div>
           <div class="svc-body">
             <header class="svc-head"><h3 class="svc-name">Levantamento de Premissas</h3></header>
-            <p class="svc-d">Coleta e organização das premissas necessárias à modelagem — capacidade instalada, fator de capacidade, curva de geração, estrutura de receita (PPA, leilão ou mercado livre), CAPEX e OPEX. As premissas são fornecidas pelo cliente ou extraídas de fontes setoriais de referência, sempre documentadas quanto à origem.</p>
+            <dl class="svc-fields">
+              <div class="svc-field">
+                <dt>O que é</dt>
+                <dd>Coleta e organização das premissas que alimentam a análise — geração, receita, CAPEX, OPEX e parâmetros do ativo.</dd>
+              </div>
+              <div class="svc-field">
+                <dt>Para que serve</dt>
+                <dd>Estabelecer uma base rastreável e confirmar se vale avançar. Premissas que exigem certificação técnica chegam já certificadas.</dd>
+              </div>
+              <div class="svc-field">
+                <dt>Resultado desta fase</dt>
+                <dd>Um conjunto de premissas documentado quanto à origem, pronto para sustentar toda a análise seguinte.</dd>
+              </div>
+            </dl>
           </div>
         </article>
 
@@ -964,7 +1020,20 @@
           <div class="svc-num">ii.</div>
           <div class="svc-body">
             <header class="svc-head"><h3 class="svc-name">Estruturação do Modelo</h3></header>
-            <p class="svc-d">Construção do modelo financeiro em Excel adaptado ao estágio do projeto — greenfield, em construção ou em operação. Estrutura de capital, perfil de dívida e amortização, regime tributário e cronograma de desembolso. Modelo organizado, auditável e parametrizado para permitir ajuste de premissas.</p>
+            <dl class="svc-fields">
+              <div class="svc-field">
+                <dt>O que é</dt>
+                <dd>Construção do modelo financeiro em Excel, adaptado ao estágio do projeto — greenfield, em construção ou em operação.</dd>
+              </div>
+              <div class="svc-field">
+                <dt>Para que serve</dt>
+                <dd>Traduzir as premissas em uma ferramenta de cálculo coerente, dimensionada à profundidade que cada trabalho exige.</dd>
+              </div>
+              <div class="svc-field">
+                <dt>Resultado desta fase</dt>
+                <dd>Um modelo organizado, auditável e parametrizado, que permite ajustar premissas e recalcular resultados automaticamente.</dd>
+              </div>
+            </dl>
           </div>
         </article>
 
@@ -972,7 +1041,20 @@
           <div class="svc-num">iii.</div>
           <div class="svc-body">
             <header class="svc-head"><h3 class="svc-name">Análise e Cenários</h3></header>
-            <p class="svc-d">Cálculo dos indicadores de retorno — TIR do projeto e do equity, VPL, payback e LCOE. Definição da taxa de desconto (WACC) a partir da estrutura de capital e do custo de capital. Projeção do fluxo de caixa por cenários — base, conservador e otimista — com análise de sensibilidade sobre as variáveis de maior impacto.</p>
+            <dl class="svc-fields">
+              <div class="svc-field">
+                <dt>O que é</dt>
+                <dd>Cálculo dos indicadores de retorno e projeção do fluxo de caixa sob diferentes cenários de operação.</dd>
+              </div>
+              <div class="svc-field">
+                <dt>Para que serve</dt>
+                <dd>Medir o desempenho financeiro e identificar as variáveis que mais influenciam o resultado, dando dimensão ao risco.</dd>
+              </div>
+              <div class="svc-field">
+                <dt>Resultado desta fase</dt>
+                <dd>Os indicadores de retorno pertinentes ao escopo, a taxa de desconto adequada e os cenários base, conservador e otimista.</dd>
+              </div>
+            </dl>
           </div>
         </article>
 
@@ -980,7 +1062,20 @@
           <div class="svc-num">iv.</div>
           <div class="svc-body">
             <header class="svc-head"><h3 class="svc-name">Entrega e Interpretação</h3></header>
-            <p class="svc-d">Apresentação dos resultados em relatório estruturado, com leitura técnica dos indicadores e dos fatores que mais influenciam o valor ou o retorno. Quando aplicável, estimativa de valor por DCF e referência a múltiplos de mercado. O modelo é entregue ao cliente como ferramenta auditável.</p>
+            <dl class="svc-fields">
+              <div class="svc-field">
+                <dt>O que é</dt>
+                <dd>Consolidação dos resultados no formato do entregável contratado, acompanhada de leitura e interpretação técnica.</dd>
+              </div>
+              <div class="svc-field">
+                <dt>Para que serve</dt>
+                <dd>Transformar os números da análise em base de decisão — o que os indicadores significam e o que mais pesa sobre o valor.</dd>
+              </div>
+              <div class="svc-field">
+                <dt>Resultado desta fase</dt>
+                <dd>O entregável final no formato do serviço contratado — relatório, modelo ou avaliação de valor, conforme a seção de Serviços.</dd>
+              </div>
+            </dl>
           </div>
         </article>
       </div>
@@ -1015,57 +1110,68 @@
           <span class="q-ico" aria-hidden="true"></span>
         </summary>
         <div class="q-a">
-          <p>Em qualquer ponto da jornada de decisão — da triagem inicial de uma oportunidade ao suporte analítico em uma transação já estruturada. Quanto mais cedo o envolvimento, mais cedo os riscos e o potencial de valor ficam visíveis na modelagem.</p>
+          <p>Em qualquer fase do ciclo do ativo. Na pré-construção, com o estudo de <strong>Viabilidade</strong>. Durante o desenvolvimento, com a <strong>Modelagem Financeira</strong>. E no momento de uma transação, com a <strong>Avaliação</strong> de valor. Quanto mais cedo o envolvimento, mais cedo os riscos e o potencial de valor ficam visíveis na modelagem.</p>
         </div>
       </details>
 
       <details class="faq-item reveal" name="faq" style="--d:120ms">
         <summary>
           <span class="q-n">03</span>
-          <span class="q-t">Como recebo o entregável?</span>
+          <span class="q-t">As premissas técnicas precisam estar certificadas?</span>
           <span class="q-ico" aria-hidden="true"></span>
         </summary>
         <div class="q-a">
-          <p>O modelo financeiro é entregue em planilha aberta e auditável, acompanhado de um relatório técnico com premissas, cenários e análise de sensibilidade. Quando o escopo inclui avaliação de ativo, o relatório traz também a estimativa de valor. Tudo documentado para sustentar a decisão internamente ou em negociação.</p>
+          <p>Sim, quando sua natureza exige. Dados como estudos de recurso energético (vento, irradiação, vazão), curvas de geração P50/P90 e laudos de engenharia devem chegar já certificados por empresa especializada e habilitada. Eu os incorporo ao modelo como premissas — com a origem documentada — mas não realizo a certificação técnica em si, que é competência de quem assina esse tipo de estudo. Essa separação preserva o rigor: cada número tem uma fonte responsável.</p>
         </div>
       </details>
 
       <details class="faq-item reveal" name="faq" style="--d:180ms">
         <summary>
           <span class="q-n">04</span>
-          <span class="q-t">Quanto tempo leva um trabalho?</span>
+          <span class="q-t">Como recebo o entregável?</span>
           <span class="q-ico" aria-hidden="true"></span>
         </summary>
         <div class="q-a">
-          <p>Depende do escopo e da disponibilidade dos dados. Uma análise preliminar resolve-se em poucos dias; uma modelagem completa ou avaliação de ativo costuma levar algumas semanas. O prazo é definido e acordado antes do início, junto com o escopo — sem revisões de cronograma no meio do caminho.</p>
+          <p>Depende do serviço contratado. A <strong>Viabilidade</strong> entrega um relatório com a análise e um modelo de base. A <strong>Modelagem</strong> entrega o modelo financeiro em planilha aberta e auditável, com manual de premissas — a ferramenta é o produto. A <strong>Avaliação</strong> entrega um relatório de valor com a faixa fundamentada e o modelo de suporte. Em todos os casos, premissas, cenários e análises vêm documentados para sustentar a decisão internamente ou em negociação.</p>
         </div>
       </details>
 
       <details class="faq-item reveal" name="faq" style="--d:240ms">
         <summary>
           <span class="q-n">05</span>
-          <span class="q-t">Como funciona a cobrança?</span>
+          <span class="q-t">Quanto tempo leva um trabalho?</span>
           <span class="q-ico" aria-hidden="true"></span>
         </summary>
         <div class="q-a">
-          <p>Por projeto, com escopo e valor fechados antes de começar — sem cobrança por hora não prevista nem custos que aparecem no meio. Para dúvidas pontuais que não exigem um projeto completo, há a opção de suporte por hora técnica, com mínimo de quatro horas. A proposta detalha o que está incluído em cada caso.</p>
+          <p>Depende do escopo e da disponibilidade dos dados. Um estudo de <strong>Viabilidade</strong> costuma levar de duas a três semanas; uma <strong>Modelagem</strong> completa, de três a quatro semanas, pela maior profundidade do modelo; uma <strong>Avaliação</strong> de ativo, prazo semelhante ao da modelagem, conforme a complexidade da transação. O prazo é definido e acordado antes do início, junto com o escopo — sem revisões de cronograma no meio do caminho.</p>
         </div>
       </details>
 
       <details class="faq-item reveal" name="faq" style="--d:300ms">
         <summary>
           <span class="q-n">06</span>
-          <span class="q-t">Como funciona o processo até o início do trabalho?</span>
+          <span class="q-t">Como funciona a cobrança?</span>
           <span class="q-ico" aria-hidden="true"></span>
         </summary>
         <div class="q-a">
-          <p>O fluxo é simples e formalizado em cada etapa. Após o primeiro contato e a triagem da demanda, quando há troca de informações sensíveis, firmamos um acordo de confidencialidade (NDA). Em seguida, envio uma proposta com escopo, entregável e honorários definidos. Aprovada a proposta, o trabalho é formalizado em contrato de prestação de serviços antes do início. Cada passo é documentado — o cliente sabe exatamente o que foi acordado e o que será entregue.</p>
+          <p>Por projeto, com escopo e valor fechados antes de começar — sem cobrança por hora não prevista nem custos que aparecem no meio. No caso da <strong>Viabilidade</strong>, o trabalho começa por uma verificação rápida (go/no-go) que confirma se faz sentido avançar, evitando que você invista no estudo completo quando a oportunidade não se sustenta. A proposta detalha o que está incluído em cada caso.</p>
         </div>
       </details>
 
       <details class="faq-item reveal" name="faq" style="--d:360ms">
         <summary>
           <span class="q-n">07</span>
+          <span class="q-t">Como funciona o processo até o início do trabalho?</span>
+          <span class="q-ico" aria-hidden="true"></span>
+        </summary>
+        <div class="q-a">
+          <p>O fluxo é simples e formalizado em cada etapa. Após o primeiro contato e a qualificação da demanda, quando há troca de informações sensíveis, firmamos um acordo de confidencialidade (NDA). Em seguida, envio uma proposta com escopo, entregável e honorários definidos. Aprovada a proposta, o trabalho é formalizado em contrato de prestação de serviços antes do início. Cada passo é documentado — o cliente sabe exatamente o que foi acordado e o que será entregue.</p>
+        </div>
+      </details>
+
+      <details class="faq-item reveal" name="faq" style="--d:420ms">
+        <summary>
+          <span class="q-n">08</span>
           <span class="q-t">O trabalho é confidencial?</span>
           <span class="q-ico" aria-hidden="true"></span>
         </summary>
@@ -1074,25 +1180,14 @@
         </div>
       </details>
 
-      <details class="faq-item reveal" name="faq" style="--d:420ms">
+      <details class="faq-item reveal" name="faq" style="--d:480ms">
         <summary>
-          <span class="q-n">08</span>
+          <span class="q-n">09</span>
           <span class="q-t">Você tem isenção em relação ao resultado?</span>
           <span class="q-ico" aria-hidden="true"></span>
         </summary>
         <div class="q-a">
-          <p>Sim. Quando atuo em uma transação, represento exclusivamente uma das partes e não tenho interesse no fechamento do negócio nem remuneração atrelada ao valor encontrado. A análise é técnica e independente — o número que entrego é o que o modelo sustenta, não o que favorece uma das pontas.</p>
-        </div>
-      </details>
-
-      <details class="faq-item reveal" name="faq" style="--d:480ms">
-        <summary>
-          <span class="q-n">09</span>
-          <span class="q-t">Você trabalha em parceria com outros profissionais ou empresas?</span>
-          <span class="q-ico" aria-hidden="true"></span>
-        </summary>
-        <div class="q-a">
-          <p>Sim. Além do atendimento direto a clientes, atuo como parceiro técnico de consultorias, desenvolvedores, fundos e escritórios que precisam de capacidade de modelagem financeira em projetos de energia. Nesses casos, a relação pode ser formalizada por um memorando de entendimento (MOU) que define o escopo da colaboração. O modelo é flexível — de um engajamento pontual em um projeto específico a uma parceria recorrente.</p>
+          <p>Sim. A análise é sempre técnica e independente — o número que entrego é o que o modelo sustenta, não o que agrada quem contrata. Em uma <strong>Avaliação</strong> para transação, isso significa que, mesmo representando exclusivamente uma das partes, não tenho interesse no fechamento do negócio nem remuneração atrelada ao valor encontrado.</p>
         </div>
       </details>
     </div>
