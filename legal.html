@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Avisos Legais — Tonello Advisory</title>
+<meta name="description" content="Avisos legais da Tonello Advisory — privacidade, confidencialidade e termos de uso. Este site não coleta dados pessoais.">
+<meta name="author" content="Alexandre Fillard Tonello">
+<meta name="theme-color" content="#0A0A0A">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.tonelloadvisory.com.br/legal.html">
+<link rel="icon" type="image/png" href="./favicon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://www.tonelloadvisory.com.br/legal.html">
+<meta property="og:title" content="Avisos Legais — Tonello Advisory">
+<meta property="og:description" content="Privacidade, confidencialidade e termos de uso da Tonello Advisory.">
+<meta property="og:site_name" content="Tonello Advisory">
+<meta property="og:image" content="https://www.tonelloadvisory.com.br/og-image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<style>
+  :root{
+    --ink: #0A0A0A;
+    --paper: #FFFFFF;
+    --mist: #F5F5F5;
+    --rule: #E6E6E6;
+    --muted: #6B6B6B;
+    --serif: Georgia, "Times New Roman", serif;
+    --max: 820px;
+    --pad: clamp(24px, 5vw, 80px);
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--serif); font-size:17px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width:var(--max); margin:0 auto; padding-left:var(--pad); padding-right:var(--pad); }
+  section[id]{ scroll-margin-top: 96px; }
+
+  /* Top bar */
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    background:rgba(255,255,255,.86); backdrop-filter:saturate(160%) blur(10px);
+    border-bottom:1px solid var(--rule);
+  }
+  .topbar .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:64px;
+  }
+  .brand{ font-family:var(--serif); font-weight:700; font-size:20px; letter-spacing:0; }
+  .back{
+    font-size:13px; letter-spacing:.02em; color:var(--muted);
+    display:inline-flex; align-items:center; gap:8px;
+    transition:color .25s ease;
+  }
+  .back:hover{ color:var(--ink); }
+  .back .ar{ font-size:15px; }
+
+  /* Header */
+  header.page{ padding: clamp(56px, 9vh, 110px) 0 clamp(28px, 4vh, 44px); }
+  .eyebrow{
+    font-size:11.5px; letter-spacing:.28em; text-transform:uppercase; color:var(--muted);
+    display:flex; align-items:center; gap:14px; margin:0 0 22px;
+  }
+  .eyebrow::before{ content:""; width:28px; height:1px; background:var(--ink); display:inline-block; }
+  h1{
+    font-family:var(--serif); font-weight:700;
+    font-size: clamp(40px, 6vw, 66px); line-height:1.04; letter-spacing:-.015em;
+    margin:0;
+  }
+  h1 .em{ font-style:italic; font-weight:400; }
+  header.page .intro{
+    margin: 26px 0 0; max-width:62ch; color:var(--muted);
+    font-size: clamp(16px,1.2vw,18px);
+  }
+
+  /* Table of contents */
+  .toc{
+    display:flex; flex-wrap:wrap; gap:10px 14px;
+    margin: 30px 0 0; padding: 22px 0 0; border-top:1px solid var(--rule);
+  }
+  .toc a{
+    font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted);
+    padding:8px 16px; border:1px solid var(--rule); border-radius:999px;
+    transition: border-color .25s ease, color .25s ease;
+  }
+  .toc a:hover{ color:var(--ink); border-color:var(--ink); }
+
+  /* Legal sections */
+  main{ padding-bottom: clamp(40px, 6vh, 72px); }
+  .legal-sec{ padding: clamp(40px,6vh,64px) 0; border-top:1px solid var(--rule); }
+  .legal-sec .num{
+    font-size:11.5px; letter-spacing:.24em; text-transform:uppercase; color:var(--muted);
+    margin:0 0 14px;
+  }
+  .legal-sec h2{
+    font-family:var(--serif); font-weight:700;
+    font-size: clamp(26px, 3vw, 38px); line-height:1.1; letter-spacing:-.01em;
+    margin:0 0 22px;
+  }
+  .legal-sec p{
+    margin:0 0 18px; max-width:70ch;
+    text-align:justify; hyphens:auto;
+    color:#1c1c1c;
+  }
+  .legal-sec p:last-child{ margin-bottom:0; }
+
+  /* Footer */
+  footer{
+    background:var(--ink); color:rgba(255,255,255,.55);
+    padding: clamp(40px,6vh,64px) 0 clamp(32px,5vh,48px);
+  }
+  footer .wrap{
+    display:flex; justify-content:space-between; align-items:center; gap:24px;
+    font-size:12px; letter-spacing:.06em;
+  }
+  footer .lg{ font-family:var(--serif); font-weight:700; font-size:20px; color:var(--paper); }
+  footer .legal-links{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-size:12px; letter-spacing:.04em; }
+  footer .legal-links a{ color:rgba(255,255,255,.55); transition:color .25s ease; }
+  footer .legal-links a:hover{ color:var(--paper); }
+  footer .legal-links span{ color:rgba(255,255,255,.28); }
+  @media (max-width:620px){
+    footer .wrap{ flex-direction:column; align-items:flex-start; gap:16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Tonello — início">Tonello</a>
+    <a class="back" href="index.html"><span class="ar" aria-hidden="true">←</span> Voltar ao site</a>
+  </div>
+</div>
+
+<header class="page">
+  <div class="wrap">
+    <p class="eyebrow">Avisos Legais</p>
+    <h1>Avisos <span class="em">Legais.</span></h1>
+    <p class="intro">Este site tem caráter institucional e informativo. Os textos abaixo são proporcionais a esse estágio — enxutos e precisos, sem descrever tratamento de dados que não ocorre.</p>
+    <nav class="toc" aria-label="Seções">
+      <a href="#privacidade">Privacidade</a>
+      <a href="#confidencialidade">Confidencialidade</a>
+      <a href="#termos">Termos de Uso</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="legal-sec" id="privacidade">
+    <p class="num">01</p>
+    <h2>Privacidade</h2>
+    <p>Este site tem caráter institucional e informativo. Não coleto, armazeno ou trato dados pessoais por meio dele: não há formulários de cadastro nem captura automática de informações de contato. O botão de contato apenas abre o aplicativo de e-mail do próprio usuário, direcionado ao meu endereço — o envio parte do usuário, por sua iniciativa.</p>
+    <p>As informações que você me enviar por e-mail são utilizadas exclusivamente para responder ao contato e avaliar um eventual trabalho, e não são compartilhadas com terceiros. O tratamento de dados no âmbito de um projeto contratado é regido por contrato e por acordo de confidencialidade próprios, firmados antes de qualquer troca de informação sensível.</p>
+  </section>
+
+  <section class="legal-sec" id="confidencialidade">
+    <p class="num">02</p>
+    <h2>Confidencialidade</h2>
+    <p>A confidencialidade é um princípio central do meu trabalho. As informações compartilhadas em um primeiro contato são tratadas com sigilo e utilizadas apenas para compreender a demanda e avaliar o escopo de um eventual trabalho.</p>
+    <p>A relação formal de confidencialidade é estabelecida por um acordo específico (NDA), firmado antes de qualquer troca de informação sensível sobre o projeto. A partir daí, os dados do cliente e de eventuais contrapartes são protegidos nos termos desse acordo e não são divulgados a terceiros.</p>
+  </section>
+
+  <section class="legal-sec" id="termos">
+    <p class="num">03</p>
+    <h2>Termos de Uso</h2>
+    <p>O conteúdo deste site — incluindo textos e materiais publicados — tem finalidade exclusivamente informativa e não constitui aconselhamento financeiro, contábil, jurídico ou recomendação de investimento. Nenhuma informação aqui apresentada substitui uma análise técnica formal.</p>
+    <p>Os modelos, análises e pareceres da Tonello Advisory são elaborados sob contrato específico e refletem estimativas técnicas fundamentadas, sujeitas às premissas e limitações descritas em cada trabalho. As premissas que, por sua natureza, exigem certificação técnica devem ser fornecidas já certificadas por profissional ou empresa habilitada; não realizo verificação regulatória, auditoria, perícia ou certificação técnica. Os resultados não constituem garantia de valor de realização nem recomendação de decisão de investimento.</p>
+    <p>Todo o conteúdo deste site é de propriedade de Alexandre Fillard Tonello (Tonello Advisory), protegido pela legislação de direitos autorais. A reprodução total ou parcial depende de autorização prévia.</p>
+    <p>O uso deste site implica a concordância com estes termos.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="lg">Tonello</div>
+    <nav class="legal-links" aria-label="Avisos legais">
+      <a href="legal.html#privacidade">Privacidade</a>
+      <span aria-hidden="true">·</span>
+      <a href="legal.html#confidencialidade">Confidencialidade</a>
+      <span aria-hidden="true">·</span>
+      <a href="legal.html#termos">Termos de Uso</a>
+    </nav>
+    <div class="base"><span aria-label="Brasil">🇧🇷</span> Brasil · © 2026 Tonello Advisory</div>
+  </div>
+</footer>
+
+</body>
+</html>
