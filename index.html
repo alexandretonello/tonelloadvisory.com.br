@@ -81,7 +81,7 @@
     transform:scaleX(0); transform-origin:left; transition:transform .4s cubic-bezier(.2,.7,.2,1);
   }
   .nav .links a:hover::after{transform:scaleX(1)}
-  @media (max-width:620px){ .nav .links a.hide-sm{display:none} }
+  @media (max-width:880px){ .nav .links a.hide-sm{display:none} }
 
   /* HERO */
   .hero{padding:clamp(40px,7vh,84px) 0 clamp(36px,6vh,68px)}
@@ -91,7 +91,7 @@
     margin:0; max-width:15ch; text-wrap:balance;
   }
   .hero .sub{
-    margin:clamp(28px,4vw,40px) 0 0; max-width:44ch;
+    margin:clamp(28px,4vw,40px) 0 0; max-width:90ch;
     font-size:clamp(18px,1.7vw,24px); line-height:1.45; color:#2a2a2a;
   }
   .hero .more{
@@ -105,7 +105,7 @@
   .hero .more:hover .ar{transform:translate(3px,-3px)}
   .hero .kicker{
     font-size:11.5px; letter-spacing:.28em; text-transform:uppercase; color:var(--muted);
-    display:flex; align-items:center; gap:14px; margin:0 0 clamp(22px,3.2vw,32px);
+    display:flex; align-items:center; gap:14px; margin:0 0 clamp(22px,3.2vw,32px); max-width:90ch;
   }
   .hero .kicker::before{content:""; width:28px; height:1px; background:var(--ink); display:inline-block}
 
@@ -139,7 +139,7 @@
   /* QUEM ASSINA */
   .signoff .grid{display:grid; grid-template-columns:minmax(0,360px) 1fr; gap:clamp(36px,6vw,72px); align-items:center}
   @media (max-width:780px){ .signoff .grid{grid-template-columns:1fr; gap:32px} }
-  .portrait{position:relative; width:100%; max-width:360px; aspect-ratio:4/5; background:var(--mist); overflow:hidden; border-radius:2px; justify-self:start}
+  .portrait{position:relative; width:100%; max-width:360px; aspect-ratio:4/5; background:var(--mist); overflow:hidden; border-radius:2px; justify-self:center; margin:0 auto}
   .portrait img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 30%; filter:grayscale(1) contrast(1.02)}
   .signoff .bio p{margin:0 0 22px; max-width:54ch; font-size:clamp(17px,1.3vw,20px); line-height:1.6; text-align:justify; hyphens:auto}
   .signoff .name{font-family:var(--serif); font-weight:700; font-size:clamp(22px,2vw,28px); letter-spacing:-.01em; margin:0 0 18px}
@@ -172,7 +172,7 @@
   .copy-pill{margin-left:4px; font-family:var(--serif); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.55); border:1px solid rgba(255,255,255,.2); padding:5px 10px; border-radius:999px; cursor:default; transition:all .25s ease}
   .copy-pill:hover{color:var(--paper); border-color:rgba(255,255,255,.6)}
   .copy-pill.copied{background:var(--paper); color:var(--ink); border-color:var(--paper)}
-  .contact-note{margin:24px 0 0; font-size:13px; line-height:1.55; letter-spacing:.01em; color:rgba(255,255,255,.5); max-width:52ch}
+  .contact-note{margin:24px 0 0; font-size:15px; line-height:1.55; letter-spacing:.01em; color:rgba(255,255,255,.5); max-width:none; white-space:nowrap}
 
   footer{
     margin-top:clamp(56px,9vh,96px); padding-top:28px; border-top:1px solid rgba(255,255,255,.14);
@@ -208,10 +208,10 @@
   <div class="container">
     <p class="kicker reveal">Modelagem financeira de projetos de energia</p>
     <h1 class="reveal" style="--d:80ms">Eu modelo projetos de energia.</h1>
-    <p class="sub reveal" style="--d:160ms">Premissas entram documentadas. Saem transformadas em um modelo que se sustenta sob escrutínio.</p>
+    <p class="sub reveal" style="--d:160ms">Greenfield, construção ou operação. Modelos auditáveis, prontos para a decisão de investimento e a due diligence de financiadores.</p>
     <a href="#contato" class="more reveal" style="--d:240ms">
       <span class="t">Entre em contato</span>
-      <span class="ar" aria-hidden="true">↗</span>
+      <span class="ar" aria-hidden="true">→</span>
     </a>
   </div>
 </section>
