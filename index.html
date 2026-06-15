@@ -81,7 +81,7 @@
     transform:scaleX(0); transform-origin:left; transition:transform .4s cubic-bezier(.2,.7,.2,1);
   }
   .nav .links a:hover::after{transform:scaleX(1)}
-  @media (max-width:880px){ .nav .links a.hide-sm{display:none} }
+  @media (max-width:380px){ .nav .links a.hide-sm{display:none} }
 
   /* HERO */
   .hero{padding:clamp(40px,7vh,84px) 0 clamp(36px,6vh,68px)}
@@ -154,7 +154,7 @@
   .signoff .ln:hover .t::after{transform:scaleX(1)}
 
   /* CONTATO */
-  .contato{background:var(--ink); color:var(--paper); border-top:1px solid var(--ink)}
+  .contato{background:var(--ink); color:var(--paper); border-top:1px solid var(--ink); overflow:hidden}
   .contato ::selection{background:var(--paper); color:var(--ink)}
   .contato .eyebrow{color:rgba(255,255,255,.6)}
   .contato .eyebrow::before{background:var(--paper)}
